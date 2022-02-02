@@ -94,21 +94,21 @@ publishing {
     }
 }
 
-bintray {
-    user = bintrayUsername
-    key = bintrayApiKey
-    publications = ['BintrayRelease']
-    pkg {
-        repo = 'maven'
-        name = project.name
-        licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/MxsicXYZ/AhniJDK.git'
-        publish = true
-        version {
-            name = project.version
-        }
-    }
-}
+// bintray {
+//     user = bintrayUsername
+//     key = bintrayApiKey
+//     publications = ['BintrayRelease']
+//     pkg {
+//         repo = 'maven'
+//         name = project.name
+//         licenses = ['Apache-2.0']
+//         vcsUrl = 'https://github.com/MxsicXYZ/AhniJDK.git'
+//         publish = true
+//         version {
+//             name = project.version
+//         }
+//     }
+// }
 
 bintrayUpload {
     dependsOn build

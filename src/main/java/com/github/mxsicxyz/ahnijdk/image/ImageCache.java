@@ -1,4 +1,4 @@
-package com.github.mxsicxyz.ahnijdkjdk.image;
+package com.github.mxsicxyz.ahnijdk.image;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnegative;

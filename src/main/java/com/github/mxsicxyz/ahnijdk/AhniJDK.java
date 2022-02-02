@@ -4,11 +4,11 @@ import com.github.natanbc.reliqua.limiter.RateLimiter;
 import com.github.natanbc.reliqua.limiter.factory.RateLimiterFactory;
 import com.github.natanbc.reliqua.request.PendingRequest;
 import okhttp3.OkHttpClient;
-import com.github.mxsicxyz.ahnijdkjdk.image.ImageCache;
-import com.github.mxsicxyz.ahnijdkjdk.image.ImageProvider;
-import com.github.mxsicxyz.ahnijdkjdk.internal.AhniJDKImpl;
-import com.github.mxsicxyz.ahnijdkjdk.text.TextProvider;
-import com.github.mxsicxyz.ahnijdkjdk.util.InputStreamFunction;
+import com.github.mxsicxyz.ahnijdk.image.ImageCache;
+import com.github.mxsicxyz.ahnijdk.image.ImageProvider;
+import com.github.mxsicxyz.ahnijdk.internal.AhniJDKImpl;
+
+import com.github.mxsicxyz.ahnijdk.util.InputStreamFunction;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
@@ -102,13 +102,4 @@ public interface AhniJDK {
     @CheckReturnValue
     @Nonnull
     ImageProvider getImageProvider();
-
-    /**
-     * Returns a text provider, used to request text and generate answers from the api.
-     *
-     * @return A text provider.
-     */
-    @CheckReturnValue
-    @Nonnull
-    TextProvider getTextProvider();
 }

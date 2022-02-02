@@ -1,7 +1,7 @@
 package com.github.mxsicxyz.ahnijdk;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
-public class NekosInfo {
+public class AhniInfo {
     public static final String COMMIT = "@COMMIT_HASH@";
     public static final String VERSION_MAJOR = "@VERSION_MAJOR@";
     public static final String VERSION_MINOR = "@VERSION_MINOR@";
