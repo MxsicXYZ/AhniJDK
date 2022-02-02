@@ -1,7 +1,7 @@
-package com.github.mxsicxyz.ahni.text;
+package com.github.mxsicxyz.ahnijdkjdk.text;
 
 import com.github.natanbc.reliqua.request.PendingRequest;
-import com.github.mxsicxyz.ahni.AhniJDK;
+import com.github.mxsicxyz.ahnijdkjdk.AhniJDK;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;

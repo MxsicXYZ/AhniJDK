@@ -1,4 +1,4 @@
-package com.github.mxsicxyz.ahni.util;
+package com.github.mxsicxyz.ahnijdkjdk.util;
 
 import com.github.natanbc.reliqua.request.RequestContext;
 import com.github.natanbc.reliqua.request.RequestException;
@@ -8,7 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-import com.github.mxsicxyz.ahni.MissingScopeException;
+import com.github.mxsicxyz.ahnijdkjdk.MissingScopeException;
 
 import java.io.IOException;
 import java.io.InputStream;

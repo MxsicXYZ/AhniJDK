@@ -1,4 +1,4 @@
-package com.github.mxsicxyz.ahni;
+package com.github.mxsicxyz.ahnijdk;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 public class NekosInfo {

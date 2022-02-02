@@ -1,4 +1,4 @@
-package com.github.mxsicxyz.ahni.text;
+package com.github.mxsicxyz.ahnijdkjdk.text;
 
 import org.json.JSONObject;
 

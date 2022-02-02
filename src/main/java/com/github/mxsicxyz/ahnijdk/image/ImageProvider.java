@@ -1,8 +1,8 @@
-package com.github.mxsicxyz.ahni.image;
+package com.github.mxsicxyz.ahnijdkjdk.image;
 
 import com.github.natanbc.reliqua.request.PendingRequest;
-import com.github.mxsicxyz.ahni.AhniJDK;
-import com.github.mxsicxyz.ahni.util.InputStreamFunction;
+import com.github.mxsicxyz.ahnijdkjdk.AhniJDK;
+import com.github.mxsicxyz.ahnijdkjdk.util.InputStreamFunction;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;

@@ -1,14 +1,14 @@
-package com.github.mxsicxyz.ahni;
+package com.github.mxsicxyz.ahnijdk;
 
 import com.github.natanbc.reliqua.limiter.RateLimiter;
 import com.github.natanbc.reliqua.limiter.factory.RateLimiterFactory;
 import com.github.natanbc.reliqua.request.PendingRequest;
 import okhttp3.OkHttpClient;
-import com.github.mxsicxyz.ahni.image.ImageCache;
-import com.github.mxsicxyz.ahni.image.ImageProvider;
-import com.github.mxsicxyz.ahni.internal.AhniJDKImpl;
-import com.github.mxsicxyz.ahni.text.TextProvider;
-import com.github.mxsicxyz.ahni.util.InputStreamFunction;
+import com.github.mxsicxyz.ahnijdkjdk.image.ImageCache;
+import com.github.mxsicxyz.ahnijdkjdk.image.ImageProvider;
+import com.github.mxsicxyz.ahnijdkjdk.internal.AhniJDKImpl;
+import com.github.mxsicxyz.ahnijdkjdk.text.TextProvider;
+import com.github.mxsicxyz.ahnijdkjdk.util.InputStreamFunction;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;

@@ -1,4 +1,4 @@
-package com.github.mxsicxyz.ahni.image;
+package com.github.mxsicxyz.ahnijdkjdk.image;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

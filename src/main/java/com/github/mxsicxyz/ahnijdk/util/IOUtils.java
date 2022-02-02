@@ -1,4 +1,4 @@
-package com.github.mxsicxyz.ahni.util;
+package com.github.mxsicxyz.ahnijdkjdk.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

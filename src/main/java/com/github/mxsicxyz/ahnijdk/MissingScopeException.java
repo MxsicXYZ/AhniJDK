@@ -1,4 +1,4 @@
-package com.github.mxsicxyz.ahni;
+package com.github.mxsicxyz.ahnijdk;
 
 import com.github.natanbc.reliqua.request.RequestException;
 
