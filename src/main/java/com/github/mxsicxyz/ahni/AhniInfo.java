@@ -1,4 +1,4 @@
-package pw.aru.api.nekos4j;
+package com.github.mxsicxyz.ahni;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 public class NekosInfo {

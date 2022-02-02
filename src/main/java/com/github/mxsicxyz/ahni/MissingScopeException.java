@@ -1,4 +1,4 @@
-package pw.aru.api.nekos4j;
+package com.github.mxsicxyz.ahni;
 
 import com.github.natanbc.reliqua.request.RequestException;
 

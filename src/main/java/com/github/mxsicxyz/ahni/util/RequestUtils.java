@@ -1,4 +1,4 @@
-package pw.aru.api.nekos4j.util;
+package com.github.mxsicxyz.ahni.util;
 
 import com.github.natanbc.reliqua.request.RequestContext;
 import com.github.natanbc.reliqua.request.RequestException;
@@ -8,7 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-import pw.aru.api.nekos4j.MissingScopeException;
+import com.github.mxsicxyz.ahni.MissingScopeException;
 
 import java.io.IOException;
 import java.io.InputStream;

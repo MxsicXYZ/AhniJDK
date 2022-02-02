@@ -1,4 +1,4 @@
-package pw.aru.api.nekos4j.image;
+package com.github.mxsicxyz.ahni.image;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnegative;

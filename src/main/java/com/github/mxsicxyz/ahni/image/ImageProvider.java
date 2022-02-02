@@ -1,8 +1,8 @@
-package pw.aru.api.nekos4j.image;
+package com.github.mxsicxyz.ahni.image;
 
 import com.github.natanbc.reliqua.request.PendingRequest;
-import pw.aru.api.nekos4j.Nekos4J;
-import pw.aru.api.nekos4j.util.InputStreamFunction;
+import com.github.mxsicxyz.ahni.AhniJDK;
+import com.github.mxsicxyz.ahni.util.InputStreamFunction;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
@@ -29,7 +29,7 @@ public interface ImageProvider {
      */
     @CheckReturnValue
     @Nonnull
-    Nekos4J getApi();
+    AhniJDK getApi();
 
     /**
      * Returns the currently used image cache for this provider.

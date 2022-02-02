@@ -1,4 +1,4 @@
-package java.pw.aru.api.nekos4j.internal;
+package java.com.github.mxsicxyz.ahni.internal;
 import com.github.natanbc.reliqua.Reliqua;
 import com.github.natanbc.reliqua.limiter.factory.RateLimiterFactory;
 import com.github.natanbc.reliqua.request.PendingRequest;
@@ -9,12 +9,12 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import java.pw.aru.api.nekos4j.Nekos4J;
-import java.pw.aru.api.nekos4j.Image;
-import java.pw.aru.api.nekos4j.ImageCache;
-import java.pw.aru.api.nekos4j.image.ImageProvider;
-import java.pw.aru.api.nekos4j.util.InputStreamFunction;
-import java.pw.aru.api.nekos4j.util.RequestUtils;
+import java.com.github.mxsicxyz.ahni.AhniJDK;
+import java.com.github.mxsicxyz.ahni.Image;
+import java.com.github.mxsicxyz.ahni.ImageCache;
+import java.com.github.mxsicxyz.ahni.image.ImageProvider;
+import java.com.github.mxsicxyz.ahni.util.InputStreamFunction;
+import java.com.github.mxsicxyz.ahni.util.RequestUtils;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
@@ -31,18 +31,18 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
-public class Nekos4JImpl extends Reliqua implements Nekos4J {
+public class AhniJDKImpl extends Reliqua implements AhniJDK {
     public static abstract class AbstractManager extends Reliqua {
-        public final Nekos4JImpl api;
+        public final AhniJDKImpl api;
 
-        public AbstractManager(Nekos4JImpl api) {
+        public AbstractManager(AhniJDKImpl api) {
             super(api.getClient(), api.getRateLimiterFactory(), api.isTrackingCallSites());
             this.api = api;
         }
 
         @CheckReturnValue
         @Nonnull
-        public Nekos4J getApi() {
+        public AhniJDK getApi() {
             return api;
         }
     }
@@ -50,7 +50,7 @@ public class Nekos4JImpl extends Reliqua implements Nekos4J {
     public static class ImageProviderImpl extends AbstractManager implements ImageProvider {
         private volatile ImageCache cache = ImageCache.noop();
 
-        public ImageProviderImpl(Nekos4JImpl api) {
+        public ImageProviderImpl(AhniJDKImpl api) {
             super(api);
         }
 
@@ -127,7 +127,7 @@ public class Nekos4JImpl extends Reliqua implements Nekos4J {
     private final ImageProviderImpl imageProvider;
     private final String userAgent;
 
-    public Nekos4JImpl(OkHttpClient client, RateLimiterFactory factory, boolean trackCallSites, String userAgent, ImageCache imageCache) {
+    public AhniJDKImpl(OkHttpClient client, RateLimiterFactory factory, boolean trackCallSites, String userAgent, ImageCache imageCache) {
         super(client, factory, trackCallSites);
         this.userAgent = userAgent;
         this.imageProvider = new ImageProviderImpl(this);

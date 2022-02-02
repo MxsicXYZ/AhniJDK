@@ -1,21 +1,21 @@
-package pw.aru.api.nekos4j;
+package com.github.mxsicxyz.ahni;
 
 import com.github.natanbc.reliqua.limiter.RateLimiter;
 import com.github.natanbc.reliqua.limiter.factory.RateLimiterFactory;
 import com.github.natanbc.reliqua.request.PendingRequest;
 import okhttp3.OkHttpClient;
-import pw.aru.api.nekos4j.image.ImageCache;
-import pw.aru.api.nekos4j.image.ImageProvider;
-import pw.aru.api.nekos4j.internal.Nekos4JImpl;
-import pw.aru.api.nekos4j.text.TextProvider;
-import pw.aru.api.nekos4j.util.InputStreamFunction;
+import com.github.mxsicxyz.ahni.image.ImageCache;
+import com.github.mxsicxyz.ahni.image.ImageProvider;
+import com.github.mxsicxyz.ahni.internal.AhniJDKImpl;
+import com.github.mxsicxyz.ahni.text.TextProvider;
+import com.github.mxsicxyz.ahni.util.InputStreamFunction;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
-public interface Nekos4J {
+public interface AhniJDK {
     class Builder {
         private OkHttpClient client;
         private ImageCache imageCache;
@@ -24,12 +24,12 @@ public interface Nekos4J {
 
         @CheckReturnValue
         @Nonnull
-        public Nekos4J build() {
-            return new Nekos4JImpl(
+        public AhniJDK build() {
+            return new AhniJDKImpl(
                 client == null ? new OkHttpClient() : client,
                 rateLimiterFactory,
                 trackCallSites,
-                String.format("Nekos4J/%s/%s)", NekosInfo.VERSION, NekosInfo.COMMIT),
+                String.format("AhniJDK/%s/%s)", AhniInfo.VERSION, AhniInfo.COMMIT),
                 imageCache
             );
         }

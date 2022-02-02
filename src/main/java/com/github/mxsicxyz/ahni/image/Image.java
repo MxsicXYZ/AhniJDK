@@ -1,9 +1,9 @@
-package pw.aru.api.nekos4j.image;
+package com.github.mxsicxyz.ahni.image;
 
 import com.github.natanbc.reliqua.request.PendingRequest;
 import org.json.JSONObject;
-import pw.aru.api.nekos4j.util.IOUtils;
-import pw.aru.api.nekos4j.util.InputStreamFunction;
+import com.github.mxsicxyz.ahni.util.IOUtils;
+import com.github.mxsicxyz.ahni.util.InputStreamFunction;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;

@@ -1,4 +1,4 @@
-package pw.aru.api.nekos4j.text;
+package com.github.mxsicxyz.ahni.text;
 
 import org.json.JSONObject;
 

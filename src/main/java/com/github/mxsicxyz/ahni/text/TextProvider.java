@@ -1,7 +1,7 @@
-package pw.aru.api.nekos4j.text;
+package com.github.mxsicxyz.ahni.text;
 
 import com.github.natanbc.reliqua.request.PendingRequest;
-import pw.aru.api.nekos4j.Nekos4J;
+import com.github.mxsicxyz.ahni.AhniJDK;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
@@ -20,13 +20,13 @@ public interface TextProvider {
     PendingRequest<String> generateAnswer(@Nonnull String text);
 
     /**
-     * Returns the Nekos4J instance associated with this object.
+     * Returns the AhniJDK instance associated with this object.
      *
-     * @return The Nekos4J instance associated with this object.
+     * @return The AhniJDK instance associated with this object.
      */
     @CheckReturnValue
     @Nonnull
-    Nekos4J getApi();
+    AhniJDK getApi();
 
     /**
      * Generates an 8-ball answer based on the specified question.

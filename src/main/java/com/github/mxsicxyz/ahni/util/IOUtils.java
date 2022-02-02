@@ -1,4 +1,4 @@
-package pw.aru.api.nekos4j.util;
+package com.github.mxsicxyz.ahni.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

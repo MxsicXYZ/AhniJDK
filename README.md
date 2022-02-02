@@ -1,5 +1,5 @@
-# Nekos4J
-[ ![Download](https://api.bintray.com/packages/adriantodt/maven/nekos4j/images/download.svg) ](https://bintray.com/adriantodt/maven/nekos4j/_latestVersion)
+# AhniJDK
+[ ![Download](https://api.bintray.com/packages/adriantodt/maven/ahnijdk/images/download.svg) ](https://bintray.com/adriantodt/maven/ahnijdk/_latestVersion)
 
 Java API for Nekos.Life API v2
 
@@ -8,24 +8,24 @@ Java API for Nekos.Life API v2
 Maven:
 ```xml
 <dependency>
-  <groupId>pw.aru.api</groupId>
-  <artifactId>nekos4j</artifactId>
+  <groupId>com.github.mxsicxyz</groupId>
+  <artifactId>ahnijdk</artifactId>
   <version>VERSION</version>
   <type>pom</type>
 </dependency>
 ```
 Gradle:
 ```gradle
-compile 'pw.aru.api:nekos4j:VERSION'
+compile 'com.github.mxsicxyz:ahnijdk:VERSION'
 ```
 
-You can find the latest version [here](https://bintray.com/adriantodt/maven/nekos4j)
+You can find the latest version [here](https://bintray.com/adriantodt/maven/ahnijdk)
 
 # Usage
 
-To get started, you need an instance of `Nekos4J`
+To get started, you need an instance of `AhniJDK`
 ```java
-Nekos4J api = new Nekos4J.Builder().build();
+AhniJDK api = new AhniJDK.Builder().build();
 ```
 
 ## Images 
@@ -58,4 +58,4 @@ textProvider.getRandom8Ball().async(data->{
 });
 ```
 
-Additional info can be found on the javadocs for the Nekos4J class and [on the official Discord server](https://discord.gg/BARzYz8).
+Additional info can be found on the javadocs for the AhniJDK class and [on the official Discord server](https://discord.gg/BARzYz8).
