@@ -1,5 +1,4 @@
-package com.github.mxsicxyz.nekos4j.internal;
-
+package java.pw.aru.api.nekos4j.internal;
 import com.github.natanbc.reliqua.Reliqua;
 import com.github.natanbc.reliqua.limiter.factory.RateLimiterFactory;
 import com.github.natanbc.reliqua.request.PendingRequest;
@@ -10,12 +9,12 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.github.mxsicxyz.nekos4j.Nekos4J;
-import com.github.mxsicxyz.nekos4j.Image;
-import com.github.mxsicxyz.nekos4j.ImageCache;
-import com.github.mxsicxyz.nekos4j.image.ImageProvider;
-import com.github.mxsicxyz.nekos4j.util.InputStreamFunction;
-import com.github.mxsicxyz.nekos4j.util.RequestUtils;
+import java.pw.aru.api.nekos4j.Nekos4J;
+import java.pw.aru.api.nekos4j.Image;
+import java.pw.aru.api.nekos4j.ImageCache;
+import java.pw.aru.api.nekos4j.image.ImageProvider;
+import java.pw.aru.api.nekos4j.util.InputStreamFunction;
+import java.pw.aru.api.nekos4j.util.RequestUtils;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
