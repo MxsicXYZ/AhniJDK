@@ -1,7 +1,7 @@
 # AhniJDK
 [ ![Download](https://api.bintray.com/packages/adriantodt/maven/ahnijdk/images/download.svg) ](https://bintray.com/adriantodt/maven/ahnijdk/_latestVersion)
 
-Java API for Nekos.Life API v2
+Java API for Ahni API v2
 
 # Adding to your project
 
