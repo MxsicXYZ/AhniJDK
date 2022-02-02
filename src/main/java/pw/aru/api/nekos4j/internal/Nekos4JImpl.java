@@ -1,4 +1,4 @@
-package pw.aru.api.nekos4j.internal;
+package com.github.mxsicxyz.nekos4j.internal;
 
 import com.github.natanbc.reliqua.Reliqua;
 import com.github.natanbc.reliqua.limiter.factory.RateLimiterFactory;
@@ -10,14 +10,12 @@ import okhttp3.Request;
 import okhttp3.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pw.aru.api.nekos4j.Nekos4J;
-import pw.aru.api.nekos4j.image.Image;
-import pw.aru.api.nekos4j.image.ImageCache;
-import pw.aru.api.nekos4j.image.ImageProvider;
-import pw.aru.api.nekos4j.text.Neko8Ball;
-import pw.aru.api.nekos4j.text.TextProvider;
-import pw.aru.api.nekos4j.util.InputStreamFunction;
-import pw.aru.api.nekos4j.util.RequestUtils;
+import com.github.mxsicxyz.nekos4j.Nekos4J;
+import com.github.mxsicxyz.nekos4j.Image;
+import com.github.mxsicxyz.nekos4j.ImageCache;
+import com.github.mxsicxyz.nekos4j.image.ImageProvider;
+import com.github.mxsicxyz.nekos4j.util.InputStreamFunction;
+import com.github.mxsicxyz.nekos4j.util.RequestUtils;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
@@ -117,7 +115,7 @@ public class Nekos4JImpl extends Reliqua implements Nekos4J {
         @Nonnull
         @Override
         public PendingRequest<Image> getRandomImage(@Nonnull String type) {
-            String endpoint = "/img/" + type;
+            String endpoint = "/nsfw/img?end=" + type;
             return createRequest(api.newRequestBuilder(API_BASE + endpoint))
                 .setRateLimiter(getRateLimiter(endpoint))
                 .setStatusCodeValidator(StatusCodeValidator.ACCEPT_200)
@@ -125,92 +123,9 @@ public class Nekos4JImpl extends Reliqua implements Nekos4J {
         }
     }
 
-    public static class TextProviderImpl extends AbstractManager implements TextProvider {
-        public TextProviderImpl(Nekos4JImpl api) {
-            super(api);
-        }
-
-        @Nonnull
-        @Override
-        public PendingRequest<String> generateAnswer(@Nonnull String text) {
-            return createRequest(api.newRequestBuilder(API_BASE + "/chat?text=" + encode(text)))
-                .setRateLimiter(getRateLimiter("/chat"))
-                .setStatusCodeValidator(StatusCodeValidator.ACCEPT_200)
-                .build(response -> RequestUtils.toJSONObject(response).getString("response"), RequestUtils::handleError);
-        }
-
-        @Nonnull
-        @Override
-        public PendingRequest<String> owoifyText(@Nonnull String text) {
-            return createRequest(api.newRequestBuilder(API_BASE + "/owoify?text=" + encode(text)))
-                .setRateLimiter(getRateLimiter("/owoify"))
-                .setStatusCodeValidator(StatusCodeValidator.ACCEPT_200)
-                .build(response -> RequestUtils.toJSONObject(response).getString("owo"), RequestUtils::handleError);
-        }
-
-        @Nonnull
-        @Override
-        public PendingRequest<Neko8Ball> getRandom8Ball() {
-            return createRequest(api.newRequestBuilder(API_BASE + "/8ball"))
-                .setRateLimiter(getRateLimiter("/8ball"))
-                .setStatusCodeValidator(StatusCodeValidator.ACCEPT_200)
-                .build(response -> Neko8Ball.fromJSON(RequestUtils.toJSONObject(response)), RequestUtils::handleError);
-        }
-
-        @Nonnull
-        @Override
-        public PendingRequest<String> getRandomCat() {
-            return createRequest(api.newRequestBuilder(API_BASE + "/cat"))
-                .setRateLimiter(getRateLimiter("/cat"))
-                .setStatusCodeValidator(StatusCodeValidator.ACCEPT_200)
-                .build(response -> RequestUtils.toJSONObject(response).getString("cat"), RequestUtils::handleError);
-        }
-
-        @Nonnull
-        @Override
-        public PendingRequest<String> getRandomQuestion() {
-            return createRequest(api.newRequestBuilder(API_BASE + "/why"))
-                .setRateLimiter(getRateLimiter("/why"))
-                .setStatusCodeValidator(StatusCodeValidator.ACCEPT_200)
-                .build(response -> RequestUtils.toJSONObject(response).getString("fact"), RequestUtils::handleError);
-        }
-
-        @Nonnull
-        @Override
-        public PendingRequest<String> getRandomFact() {
-            return createRequest(api.newRequestBuilder(API_BASE + "/fact"))
-                .setRateLimiter(getRateLimiter("/fact"))
-                .setStatusCodeValidator(StatusCodeValidator.ACCEPT_200)
-                .build(response -> RequestUtils.toJSONObject(response).getString("fact"), RequestUtils::handleError);
-        }
-
-        @Nonnull
-        @Override
-        public PendingRequest<List<String>> getEndpoints() {
-            return createRequest(api.newRequestBuilder(API_BASE + "/endpoints"))
-                .setRateLimiter(getRateLimiter("/endpoints"))
-                .setStatusCodeValidator(StatusCodeValidator.ACCEPT_200)
-                .build(
-                    response -> StreamSupport.stream(
-                        RequestUtils.toJSONArray(response).spliterator(), false
-                    ).map(Object::toString).collect(Collectors.toList()),
-                    RequestUtils::handleError
-                );
-        }
-
-        private String encode(String s) {
-            try {
-                return URLEncoder.encode(s, "UTF-8");
-            } catch (UnsupportedEncodingException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
-
     public static final Logger LOGGER = LoggerFactory.getLogger("NekosJ");
-    private static final String API_BASE = "https://nekos.life/api/v2";
+    private static final String API_BASE = "https://ahni.dev/v2";
     private final ImageProviderImpl imageProvider;
-    private final TextProviderImpl textProvider;
     private final String userAgent;
 
     public Nekos4JImpl(OkHttpClient client, RateLimiterFactory factory, boolean trackCallSites, String userAgent, ImageCache imageCache) {
@@ -218,7 +133,6 @@ public class Nekos4JImpl extends Reliqua implements Nekos4J {
         this.userAgent = userAgent;
         this.imageProvider = new ImageProviderImpl(this);
         this.imageProvider.setImageCache(imageCache);
-        this.textProvider = new TextProviderImpl(this);
     }
 
     @CheckReturnValue
@@ -226,13 +140,6 @@ public class Nekos4JImpl extends Reliqua implements Nekos4J {
     @Override
     public ImageProvider getImageProvider() {
         return imageProvider;
-    }
-
-    @CheckReturnValue
-    @Nonnull
-    @Override
-    public TextProvider getTextProvider() {
-        return textProvider;
     }
 
     @CheckReturnValue
@@ -257,7 +164,7 @@ public class Nekos4JImpl extends Reliqua implements Nekos4J {
     public Request.Builder newRequestBuilder(@Nonnull String url) {
         return new Request.Builder()
             .header("User-Agent", userAgent)
-            .header("Accept-Encoding", "gzip, deflate") //we can handle gzip data
+            .header("Accept-Encoding", "gzip, deflate")
             .url(url)
             .get();
     }
